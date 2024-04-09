@@ -1,0 +1,173 @@
+1.Design and develop a reprogrammable embedded computer using 8051
+microcontrollers and to show the following aspects.
+a. Programming
+b. Execution
+c. Debugging
+
+input:
+     #include<reg52.H>
+
+sbit LED = P2^0;
+
+void Delay(void);
+
+void main(void)
+{
+	while(1)
+	{
+		LED = 0;
+		Delay();
+		LED = 1;
+		Delay();
+	}
+}
+
+void Delay(void)
+{
+	int j;
+	int i;
+	for(i = 0; i < 10; i++)
+	{
+		for(j = 0; j < 10000; j++)
+		{
+		}
+	}
+}
+
+
+2.To interface 8 LEDs at Input-output port and create different patterns.
+ Input:
+       #include<reg51.h>
+void delay();
+
+void main()
+{
+	while(1)
+	{
+		P1 = 0xAA; // Pattern to turn on alternate LEDs - 10101010
+		delay();
+		P1 = 0x55; // Reverse the pattern
+		delay();
+	}
+}
+
+void delay()
+{
+	unsigned int i, j;
+	for(i = 0; i < 23; i++)
+	{
+		for(j = 0; j < 1000; j++)
+		{
+		}
+	}
+}
+
+
+3.Port I / O: Use one of the four ports of 8051 for O/P interfaced to eight LED’s.
+Simulate binary counter (8 bit) on LED’s.
+
+Input:
+     #include<reg51.h>
+void delay(int time);
+void main()
+{
+	P1 = 00000000;
+	while(1)
+	{
+		P1++;
+		delay(100);
+	}
+}
+
+void delay(int time)
+{
+	int i, j;
+	for(i = 0; i <= time; i++)
+	{
+		for(j = 0; j <= 23; j++)
+		{
+		}
+	}
+
+}
+
+
+4. To demonstrate interfacing of seven-segment LED display and generate counting
+from 0 to 99 with fixed time delay.
+  
+INput:
+     #include<reg51.h>
+void delay();
+
+void main()
+{
+	while(1)
+	{
+		P1 = 0xAA; // Pattern to turn on alternate LEDs - 10101010
+		delay();
+		P1 = 0x55; // Reverse the pattern
+		delay();
+	}
+}
+
+void delay()
+{
+	unsigned int i, j;
+	for(i = 0; i < 23; i++)
+	{
+		for(j = 0; j < 1000; j++)
+		{
+		}
+	}
+}
+
+5. Interface 8051 with D/A converter and generate triangular wave of given
+frequency on oscilloscope.
+
+Input:
+    #include<reg51.h>
+void main()
+{
+	P2= 0x00;
+	while(1)
+	{
+		do
+		{
+			P2 += 0x05;
+		}
+		while(P2 < 0xFF);
+		do
+		{
+			P2 -= 0x05;
+		}
+		while(P2 > 0x00);
+	}
+}
+
+6. Interface 8051 with D/A converter and generate square wave of given frequency
+on oscilloscope.
+
+Input:
+#include<reg51.h>
+
+void delay();
+void main()
+{
+	P2 = 0x00;
+	while(1)
+	{
+		P2 = 0xFF;
+		delay();
+		P2 = 0x00;
+		delay();
+	}
+}
+
+void delay()
+{
+	int i;
+	for(i = 0; i <= 5000; i++)
+	{
+	}
+}
+
